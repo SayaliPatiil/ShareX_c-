@@ -46,20 +46,10 @@ namespace ShareX.HelpersLib
             if (source == null) throw new ArgumentNullException(nameof(source));
             if (action == null) throw new ArgumentNullException(nameof(action));
 
-            foreach (T item in source)
-            {
-                action(item);
-            }
+           
         }
 
-        public static byte[] GetBytes(this Image img)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                img.Save(ms, img.RawFormat);
-                return ms.ToArray();
-            }
-        }
+       
 
         public static Stream GetStream(this Image img)
         {
